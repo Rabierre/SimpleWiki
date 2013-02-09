@@ -1,0 +1,24 @@
+package org.zeropage.simplewiki;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.pegdown.Parser;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration("classpath:/test-context.xml")
+public class HomeControllerTest {
+	@Autowired
+	private HomeController controller;
+	@Autowired
+	Parser parser;
+	@Test
+	public void parserTest() {
+		assertNotNull(controller.parser);
+	}
+
+}
